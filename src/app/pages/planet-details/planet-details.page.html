@@ -1,0 +1,206 @@
+<ion-header>
+  <ion-toolbar id="color">
+    <ion-buttons slot="start" defaultHref="/tabs/planets">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{planet?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavoritePlanet()" *ngIf="isFavorite2">
+        <ion-icon name="star" slot="icon-only" color="warning"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoritePlanet()" *ngIf="!isFavorite2">
+        <ion-icon name="star-outline" slot="icon-only" color="warning"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngIf="planet" class="planet-card">
+  
+    <div style="text-align:center">
+      <a href="https://www.starwars.com/search?q=planets" style="color: #ffcc00"><em><strong><u>Search </u></strong>Fantasy Planets Databank</em></a>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+    </div>   
+    
+    <ion-item class="planet-card" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">      
+            <div>Rotation:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.rotation_period }}</div>
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  
+    <ion-item class="planet-info" lines="none">
+      <ion-icon name="cloudy-night-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Climate:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.climate }}</div>
+          </ion-col>
+        
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  
+    <ion-item class="planet-card" lines="none">
+      <ion-icon name="planet" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Terrain:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.terrain }}</div>
+          </ion-col>
+        
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  
+    <ion-item class="planet-info" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Surface Water:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.surface_water }}</div>
+          </ion-col>
+        
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  
+  
+  
+    <ion-item class="planet-card" lines="none">
+      <ion-icon name="people-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Population:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.population }}</div>
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  
+    <ion-item class="planet-info" lines="none">
+      <ion-icon name="planet" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Orbital Period:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.orbital_period }}</div>
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    
+    <ion-item class="planet-card" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Diameter:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.diameter }}</div>
+          </ion-col>
+         
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  
+    <ion-item class="planet-info" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Gravity:</div>
+          </ion-col>
+          
+          <ion-col size="12">
+            <div>{{ planet.gravity }}</div>
+          </ion-col>       
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <br><br><br>
+
+    <div class="login" style="color: #ffcc00">
+
+      <div class="container">
+        <input type="checkbox" id="zoomCheck">
+        <label for="zoomCheck">
+          <ion-img style="height: 200px; width:100%" [src]="imgurl"></ion-img>
+        </label>
+      </div>
+
+      <br>
+      <em>Please login into your favorite apps to share</em>
+    </div>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+       
+        <ion-col size="2">
+          <ion-button size="small" color="warning" (click)="SendEmail()">
+            <ion-icon name="mail-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button size="small" color="primary" (click)="ShareFacebook()">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+        </ion-col>        
+         
+        <ion-col size="2">
+          <ion-button size="small" color="secondary" (click)="SendTwitter()">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button size="small" color="tertiary" (click)="SendInstagram()">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button size="small" color="success" (click)="ShareWhatsapp()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,202 @@
+<ion-header>
+  <ion-toolbar id="color">
+    <ion-buttons slot="start" defaultHref="/tabs/starships">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{starship?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavoriteStarship()" *ngIf="isFavorite3">
+        <ion-icon name="star" slot="icon-only" color="warning"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoriteStarship()" *ngIf="!isFavorite3">
+        <ion-icon name="star-outline" slot="icon-only" color="warning"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngIf="starship" class="starship-card">
+
+    <div style="text-align:center">
+      <a href="https://www.starwars.com/search?q=starships" style="color: #ffcc00"><em><strong><u>Search
+            </u></strong>Fantasy Starship Databank</em></a>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+    </div>
+
+    <ion-item class="starship-card" lines="none">
+      <ion-icon name="star-half-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Hyperdrive Rating:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.hyperdrive_rating}}</div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="starship-info" lines="none">
+      <ion-icon name="people-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Passengers:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.passengers }}</div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="starship-card" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Maximum Speed:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.max_atmosphering_speed }}</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="starship-info" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Cargo Capacity:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.cargo_capacity }}</div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="starship-card" lines="none">
+      <ion-icon name="star-half-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Class:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.starship_class }}</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="starship-info" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Cost in Credits:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.cost_in_credits }}</div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="starship-card" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Length:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.length }}</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item class="starship-info" lines="none">
+      <ion-icon name="calculator-outline" size="small" color="warning" slot="start"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div>Consumables:</div>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>{{ starship.consumables }}</div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <br><br><br>
+
+    <div class="login" style="color: #ffcc00">
+
+      <div class="container">
+        <input type="checkbox" id="zoomCheck">
+        <label for="zoomCheck">
+          <ion-img style="height: 200px; width:100%" [src]="imgurl"></ion-img>
+        </label>
+      </div>
+
+      <br>
+      <em>Please login into your favorite apps to share</em>
+    </div>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+
+        <ion-col size="2">
+          <ion-button size="small" color="warning" (click)="SendEmail()">
+            <ion-icon name="mail-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button size="small" color="primary" (click)="ShareFacebook()">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button size="small" color="secondary" (click)="SendTwitter()">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button size="small" color="tertiary" (click)="SendInstagram()">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-button size="small" color="success" (click)="ShareWhatsapp()">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

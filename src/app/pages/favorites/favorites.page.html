@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <h2 style="text-align:center; color:#250713"><strong>Your Favorites</strong></h2>
+    <h6 style="text-align:center; color:white"><strong>Drag down screen to refresh</strong></h6>
+    <h6 style="text-align:center; color:white"> <ion-icon name="arrow-down-outline"></ion-icon></h6>
+  </ion-toolbar>
+</ion-header>
+<br><br>
+
+  <ion-title><strong>Favorite Films</strong></ion-title>
+ 
+  <ion-item *ngFor="let f of films" style="color:#250713">
+    <ion-label>     
+    <ion-item button detail lines="inset" style="color:#250713" *ngFor="let film of (films | async)?.results"
+      (click)="openDetails(film)">
+      {{ f.title }}
+    </ion-item>
+    </ion-label>
+  </ion-item>
+  <br><br><br>
+
+  <ion-title><strong>Favorite People</strong></ion-title>
+
+  <ion-item *ngFor="let p of people" style="color:#250713">
+    <ion-label>
+      {{ p.name }}
+    </ion-label>
+  </ion-item>
+  <br><br><br>
+
+  <ion-title><strong>Favorite Planets</strong></ion-title>
+  <ion-item *ngFor="let p of planets" style="color:#250713">
+    <ion-label>
+      {{ p.name }}
+    </ion-label>
+  </ion-item>
+  <br><br><br>
+
+  <ion-title><strong>Favorite Starships</strong></ion-title>
+  <ion-item *ngFor="let s of starships" style="color:#250713">
+    <ion-label>
+      {{ s.name }}
+    </ion-label>
+  </ion-item>
+  <br><br><br>
+
+</ion-content>

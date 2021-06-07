@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><strong>Superhero People</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-item button detail lines="inset" style="color: #250713" *ngFor="let person of (people | async)?.results"
+    (click)="openDetails(person)">
+    {{ person.name }}
+  </ion-item>
+  </ion-list></ion-content><br>
+  <div class="login">
+    <a href="https://www.starwars.com/search?q=characters" style="color: #ffcc00"><em>View Superhero People - <strong><u>click here</u></strong></em></a>      
+  </div>
+  
+
+
+
+
+        
+
+

@@ -1,0 +1,35 @@
+//https://stackoverflow.com/questions/39858998/zoom-in-and-out-on-mouse-click-with-css#39859268
+
+.planet-card {    
+    --border: 1px solid var(--ion-color-secondary);
+}
+
+.planet-info {
+    --background: #250713;
+}
+
+#color {--background:linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);}
+
+ion-title {--color: #250713;}
+
+.ion-justify-content-center{
+    text-align: center;
+}
+
+.login {text-align:center;}
+
+a {text-align:center;}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.container ion-img {
+  transition: transform 0.25s ease;
+  cursor: zoom-in;
+}
+
+input[type=checkbox]:checked ~ label > ion-img {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
