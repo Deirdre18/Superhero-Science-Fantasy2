@@ -4,7 +4,7 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "resolutions": {
-    "postcss": "^8.2.10"
+    "postcss": "8.3.0"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
     "cordova-instagram-plugin": "0.6.2",
     "es6-promise-plugin": "4.2.2",
     "jetifier": "1.6.8",
-    "resolve-url-loader": "^4.0.0",
+    "resolve-url-loader": "4.0.0",
     "rxjs": "6.5.3",
     "tslib": "2.2.0",
     "zone.js": "0.11.4"
@@ -40,7 +40,7 @@
     "@angular/compiler-cli": "10.2.5",
     "@angular/language-service": "10.2.5",
     "@capacitor/cli": "2.4.7",
-    "@ionic/angular-toolkit": "^4.0.0",
+    "@ionic/angular-toolkit": "4.0.0",
     "@types/google.analytics": "0.0.41",
     "@types/jasmine": "3.7.6",
     "@types/jasminewd2": "2.0.9",
@@ -62,7 +62,7 @@
     "karma-coverage-istanbul-reporter": "3.0.3",
     "karma-jasmine": "4.0.1",
     "karma-jasmine-html-reporter": "1.6.0",
-    "postcss": "^8.2.10",
+    "postcss": "8.3.0",
     "protractor": "7.0.0",
     "serialize-javascript": "5.0.1",
     "ts-node": "9.1.1",
