@@ -46,7 +46,7 @@
     "@types/jasminewd2": "2.0.13",
     "@types/node": "14.18.63",
     "codelyzer": "6.0.2",
-    "cordova-plugin-device": "2.0.3",
+    "cordova-plugin-device": "2.1.0",
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "cordova-plugin-ionic-webview": "5.0.1",
     "cordova-plugin-splashscreen": "6.0.2",
